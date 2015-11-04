@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<h:outputText value="Enter the student details..." />
+</h:head>
+
+<h:body>
+<h:messages />
+	<h:form>
+		<h:panelGrid columns="2">
+		
+		<h:outputText value="Student Id"/>
+			<h:inputText value="#{studentbean.sid}" required="true" requiredMessage="Please enter Student ID"/>
+			<h:outputText value="First Name"/>
+			<h:inputText value="#{studentbean.firstname}" required="true" requiredMessage="Please enter First Name"/>
+			<h:outputText value="Last Name" />
+			<h:inputText value="#{studentbean.lastname}" required="true" requiredMessage="Please enter Last Name"/>
+			<h:outputText value="Date of Birth (MM-DD-YYYY)" />
+			<h:inputText value="#{studentbean.dob}" required="true" requiredMessage="Please enter Date of Birth"/>
+			<h:outputText value="Country" />
+			<h:inputText value="#{studentbean.country}" required="true" requiredMessage="Please enter Country"/>
+			<h:outputText value="State" />
+			<h:inputText value="#{studentbean.state}" required="true" requiredMessage="Please enter State"/>
+			<h:outputText value="City" />
+			<h:inputText value="#{studentbean.city}" required="true" requiredMessage="Please enter City"/>
+			<h:outputText value="Zipcode" />
+			<h:inputText value="#{studentbean.zipcode}" required="true" requiredMessage="Please enter Zipcode"/>
+		</h:panelGrid>
+		<h:commandButton action="#{studentbean.savedata()}" value="Add Student" />
+		<h:commandButton action="#{studentbean.searchdata()}" value="Search Student" />
+	</h:form>
+</h:body>
+
+</html>
