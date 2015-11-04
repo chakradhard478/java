@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<f:loadBundle basename="application" var="msg"/>
+
+	<h:head>
+		<h:outputText value="Enter Student Details..." />
+	</h:head>
+	
+	<h:body>
+		<h:form>
+			<h:panelGrid style="page-align: Center" columns="2">
+			
+			<h:outputText value="Student First Name" />
+			<h:inputText value="#{details.studentfirstname}" />
+			<h:outputText value="Student Last Name" />
+			<h:inputText value="#{details.studentlastname}" />
+			<h:outputText value="Home Country" />
+			<h:inputText value="#{details.homecountry}" />
+			<h:outputText value="Current City" />
+			<h:inputText value="#{details.currentcity}" />
+			<h:outputText value="Zipcode" />
+			<h:inputText value="#{details.zipcode}" />
+			
+			</h:panelGrid>
+			<h:commandButton action="#{details.savedata}" value="Add User to Database" />
+		</h:form>
+	</h:body>
+	
+</html>
