@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"  >
+
+<h:head>
+<h:outputText value="UPDATE USER INFORMATION HERE"/>
+</h:head>
+
+<h:body>
+<h:form >
+  
+        <p:growl showSummary="true" Sticky="true" id="growl"/>
+        	 <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="First Name" />
+            <p:inputText  value="#{userBean.user.firstname}" required="true" requiredMessage="First Name is Required"/>
+           
+            
+            <h:outputText value="Last Name" />
+            <p:inputText  value="#{userBean.user.lastname}" required="true" requiredMessage="Last Name is Required"/>
+            
+        	<p:outputLabel for="popup" value="Date Of Birth" />
+        	<p:calendar id="popup" value="#{userBean.user.dob}" />
+        	
+        	<h:outputText value="Address" />
+            <p:inputText  value="#{userBean.user.address}" required="true" requiredMessage="Address is Required"/>
+            
+            
+            <h:outputText value="City" />
+            <p:inputText  value="#{userBean.user.city}" required="true" requiredMessage="City is Required"/>
+            
+            <h:outputText value="State" />
+            <p:inputText  value="#{userBean.user.state}" required="true" requiredMessage="State is Required"/>
+            
+            <h:outputText value="Zip Code" />
+            <p:inputText  value="#{userBean.user.zipcode}" required="true" requiredMessage="Zip Code is Required"/>
+            
+           
+            
+          
+           
+        </h:panelGrid>
+        
+        <p:commandButton  action="#{userBean.updateInfo}" value="Update" update="growl"   />
+    
+</h:form>
+</h:body>
+</html>
+

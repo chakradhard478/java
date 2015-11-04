@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"  >
+
+<h:head>
+<h:outputText value="ENTER LOGIN INFORMATION TO LOGIN INTO OUR COMMUNITY!!!!!!"/>
+</h:head>
+
+<h:body>
+<h:form >
+
+<p:growl showSummary="true" Sticky="true" id="growl"/>
+        	 <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="User Name" />
+            <p:inputText  value="#{loginBean.userName}" required="true" requiredMessage="User Name is Required"/>
+           
+            
+            <h:outputText value="Password" />
+            <p:inputText  value="#{loginBean.password}" required="true" type="password" requiredMessage="Password is Required"/>
+            
+        	
+            
+          
+           
+        </h:panelGrid>
+ 
+     
+        <p:commandButton  action="#{loginBean.validate}" value="Login" update="growl"   />
+ </h:form>  
+    
+    
+
+</h:body>
+</html>

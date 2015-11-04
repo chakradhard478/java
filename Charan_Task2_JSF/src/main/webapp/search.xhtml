@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"  >
+
+<h:head>
+<h:outputText value="Search results by your city"/>
+
+</h:head>
+<h:body>
+<h:form>
+	<h:messages/>
+		<h:panelGrid columns="2">
+			<h:outputText value="City"/>
+			<p:inputText value="#{userBean.city}"/>
+		</h:panelGrid>
+		<h:commandButton action="#{userBean.search}" value="Search" />
+</h:form>
+
+<h:dataTable value="#{userBean.users}" var="users">
+	<h:column>
+	<f:facet name="header">FIRSTNAME</f:facet>
+	<h:outputText value="#{users.firstname}"/>
+	</h:column>
+	
+	<h:column>
+	<f:facet name="header">LASTNAME</f:facet>
+	<h:outputText value="#{users.lastname}"/>
+	</h:column>
+	
+	<h:column>
+	<f:facet name="header">ADDRESS</f:facet>
+	<h:outputText value="#{users.address}"/>
+	</h:column>
+</h:dataTable>
+</h:body>
+</html>

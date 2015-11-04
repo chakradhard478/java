@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"  >
+
+<h:head>
+<h:outputText value=" DEKETE USER INFORMATION HERE"/>
+</h:head>
+
+<h:body>
+<h:form >
+  
+        <p:growl showSummary="true" Sticky="true" id="growl"/>
+        	 <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="First Name" />
+            <p:inputText  value="#{userBean.firstname}" required="true" requiredMessage="First Name is Required"/>
+
+           
+        </h:panelGrid>
+        
+        <p:commandButton  action="#{userBean.delete}" value="Delete User" update="growl"   />
+        
+        
+    
+</h:form>
+</h:body>
+</html>

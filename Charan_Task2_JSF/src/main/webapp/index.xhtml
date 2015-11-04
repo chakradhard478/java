@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"  >
+      
+
+
+<h:head>
+<h:outputText value="Charan's JSF with Hibernate Web Page"/>
+
+</h:head>
+
+
+ <h:body>
+ 
+ 
+     
+ <h:form>
+    <p:commandButton action="add?faces-redirect=true" value="Click Here to Add New Users" />
+</h:form>
+
+ <h:form>
+    <p:commandButton action="table?faces-redirect=true" value="Click Here to See All the Users" />
+</h:form>
+
+ <h:form>
+    <p:commandButton action="search?faces-redirect=true" value="Click Here to Search Users that are local to you" />
+</h:form>
+
+    
+
+</h:body>
+</html>

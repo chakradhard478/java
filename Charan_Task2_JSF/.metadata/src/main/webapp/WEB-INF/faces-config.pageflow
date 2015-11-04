@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14442437810230" configfile="/Charan_Task2_JSF/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf14444206382980" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14444206382981" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" id="pf14444206382982" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14444206382981" path="welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" id="pf14444207445543" referenceLink="//@navigationRule.0/@fromViewId|"/>
+  <nodes xsi:type="pageflow:PFPage" name="table.xhtml" id="pf14444207678075" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14444207678076 pf14444232928438" path="table.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updateInfo.xhtml" id="pf14444207678077" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14444207678076" path="updateInfo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="delete.xhtml" id="pf14444232928439" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14444232928438" path="delete.xhtml"/>
+  <links id="pf14444206382981" target="pf14444206382982" source="pf14444206382980" outcome="welcome" redirect="true"/>
+  <links id="pf14444207678076" target="pf14444207678077" source="pf14444207678075" redirect="true"/>
+  <links id="pf14444232928438" target="pf14444232928439" source="pf14444207678075" redirect="true"/>
+</pageflow:Pageflow>

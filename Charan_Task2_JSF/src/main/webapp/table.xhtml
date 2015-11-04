@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"  >
+
+<h:head>
+<h:outputText value="FULL INFORMATION OF THE USERS"/>
+<style>
+body {
+    background-color: silver;
+}
+
+h1 {
+    
+    color: maroon;
+    margin-left: 40px;
+} 
+</style>
+</h:head>
+
+<h:body>
+
+  			<h:form>
+       
+        	 <p:dataTable var="userBean" value="#{userBean.retreive()}">
+        	 	
+    		<p:column headerText="FIRSTNAME">
+        		<h:outputText value="#{userBean.firstname}" />
+    		</p:column>
+ 
+    		<p:column headerText="LASTNAME">
+        		<h:outputText value="#{userBean.lastname}" />
+    		</p:column>
+ 
+    		<p:column headerText="DOB">
+       			 <h:outputText value="#{userBean.dob}" />
+    		</p:column>
+ 
+    		<p:column headerText="ADDRESS">
+        		<h:outputText value="#{userBean.address}" />
+        	</p:column>
+        	
+        	<p:column headerText="STATE">
+        		<h:outputText value="#{userBean.state}" />
+        	</p:column>
+        	
+        	<p:column headerText="CITY">
+        		<h:outputText value="#{userBean.city}" />
+        	</p:column>
+        	
+        	<p:column headerText="ADDRESS">
+        		<h:outputText value="#{userBean.zipcode}" />
+        	</p:column>
+        	
+</p:dataTable>
+
+      </h:form> 
+      
+<br/>      
+    
+<h:form>
+  <p:commandButton action="updateInfo?faces-redirect=true" value="Click Here to Update User Information" />  
+</h:form> 
+
+<br/>
+
+<h:form>
+	 <p:commandButton action="delete?faces-redirect=true" value="Click Here to Delete Users" /> 
+</h:form> 
+        
+    
+
+</h:body>
+</html>
