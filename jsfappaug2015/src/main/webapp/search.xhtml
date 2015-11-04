@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+</head>
+
+
+<ui:composition template="/template/BasicTemplate.xhtml">
+	<ui:define name="title">Search Page</ui:define>
+	<ui:define name="content">
+		<h:outputText value="Search Customer Page" />
+		<h:form id="searchForm">
+			<h:messages />
+			<h:panelGrid columns="2">
+				<h:outputText value="City" />
+				<h:inputText value="#{customerBean.city}"/>
+			</h:panelGrid>
+			<h:commandButton action="#{customerBean.searchCustomersByCity}" value="Search" />
+		</h:form>
+		
+		<h:dataTable value="#{customerBean.customers}" var="customer">
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				<h:outputText value="#{customer.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Street</f:facet>
+				<h:outputText value="#{customer.street}" />
+			</h:column>		
+		</h:dataTable>
+	</ui:define>
+</ui:composition>
+</html>

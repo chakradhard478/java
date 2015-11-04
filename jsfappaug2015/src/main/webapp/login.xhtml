@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<ui:composition template="/template/BasicTemplate.xhtml">
+	<ui:define name="title">Login Page</ui:define>
+	<ui:define name="content">
+	<h:head>
+		<h:outputText value="Login Page" />
+	</h:head>
+	<h:body>
+		<h:form id="loginForm">
+			<h:messages />
+			<h:panelGrid columns="2">
+				<h:outputText value="UserName" />
+				<h:inputText value="#{login.userName}" required="true" requiredMessage="UserName is required" id="userId">
+					<f:validateLength minimum="5" maximum="10"/>
+				</h:inputText>
+				<h:outputText value="Password" />
+				<h:inputSecret value="#{login.password}" required="true" requiredMessage="Password is required"/>
+				
+			</h:panelGrid>
+			<h:commandButton action="#{login.actionLogin}" value="Login" />
+			<h:commandButton action="#{login.actionClear}" value="Clear" immediate="true"/>
+		</h:form>
+	</h:body>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<h:outputText value="Login Page" />
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:growl showSummary="true" sticky="true" id="growl"/>
+			<p:panelGrid columns="2">
+				<h:outputText value="UserName" />
+				<p:inputText value="#{login.userName}" required="true" requiredMessage="UserName is required"/>
+				<h:outputText value="Password" />
+				<p:inputText value="#{login.password}" required="true" requiredMessage="Password is required"/>
+				<p:outputLabel for="popup" value="BirthDate" />
+        		<p:calendar id="popup" value="#{login.dob}" />
+        		<h:outputText value="State" />
+        		<p:selectOneMenu value="#{login.state}">
+        			<f:selectItem itemLabel="NJ" itemValue="New Jersey"/>
+        			<f:selectItem itemLabel="NY" itemValue="New Yotk"/>
+        			<f:selectItem itemLabel="TX" itemValue="Texas"/>
+        		</p:selectOneMenu>
+        		<h:outputText value="Active" />
+        		<p:selectBooleanCheckbox value="#{login.active}"/>
+        		<h:outputText value="Gender" />
+        		<p:selectOneRadio value="#{login.gender}">
+        			<f:selectItem itemLabel="M" itemValue="Male"/>
+        			<f:selectItem itemLabel="F" itemValue="Fe-Male"/>
+        		</p:selectOneRadio>
+			</p:panelGrid>
+			<p:commandButton action="#{login.actionLogin}" value="Login" update="growl"/>
+		</h:form>
+	</h:body>
+
+</html>

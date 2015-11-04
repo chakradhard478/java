@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+</head>
+
+<body>
+	<span>Hello world</span>
+	<h:outputText value="Hello JSF" />
+	<h:form id="enrollMentForm">
+		<h:messages />
+		<h:panelGrid columns="2">
+			<h:outputText value="UserName" />
+			<h:inputText value="#{enrollment.userName}" id="userId"/>
+			<h:outputText value="Password" />
+			<h:inputSecret value="#{enrollment.password}"/>
+			<h:outputText value="Email" />
+			<h:inputText value="#{enrollment.email}" validator="emailValidator"/>
+			<h:outputText value="Credit Card Number" />
+			<h:inputText value="#{enrollment.creditCard}" converter="creditCardConverter">
+				<f:validateRegex pattern="\d{16}|\d{4} \d{4} \d{4} \d{4}|\d{4}-\d{4}-\d{4}-\d{4}" />
+			</h:inputText>
+		</h:panelGrid>
+		<h:commandButton action="#{enrollment.actionEnroll}" value="Enroll" actionListener="#{enrollment.executeBeforeAction}"/>
+	</h:form>
+
+</body>
+</html>

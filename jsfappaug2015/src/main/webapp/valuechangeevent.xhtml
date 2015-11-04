@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:form id="valueChangeEventForm">
+<h:panelGrid columns="2">
+	<h:outputText value="Selected country :" />
+	<h:inputText id="country" value="#{enrollment.localeCode}" size="20" />
+	<h:outputText value="Select a country:" />
+	<h:selectOneMenu value="#{enrollment.localeCode}" onchange="submit()"
+		valueChangeListener="#{enrollment.countryLocaleCodeChanged}">
+		<f:selectItems value="#{enrollment.countryInMap}" />
+	</h:selectOneMenu>
+</h:panelGrid>
+</h:form>
+
+</html>
