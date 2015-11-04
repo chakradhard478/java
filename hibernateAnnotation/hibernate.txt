@@ -1,0 +1,54 @@
+// JDBC way
+//Connection object -> drivermanager,datasource
+//sql -> statement, prepared statement
+//resultset -> creat your objects
+
+//Hibernate = ORM framework(Object relational mapping)
+//map your java classes to your relational database tables
+//JPA- Spec = Java Persistence API to map the classes to the tables
+//Hibernate is your implementation of JPA
+//XMl approach
+//annotation approach
+
+//write queries in object oriented way
+//seamlessly switch database
+//oracle -> select * from employee where rowcount <11
+//sybase -> select top 10 from employee
+//mysql -> select * from employee limit 10,1
+//db2-> select * from employee fetch first 10 rows only
+//provides caching mechanism
+//we dont have to write native sql
+//hibernate also has transaction management
+//provides pagination for queries
+
+//it creates the sql for us
+
+
+//core interfaces of hibernate
+Sessionfactory = takes care of creating sessions which are used for database interactions- An application can have one single session factory and is singleton and thread safe
+Session = multiple session objects, a session object is not thread safe
+Criteria and Query = are used to perform queries against the database
+Transaction = to create database transactions 
+Configuration = bootstraping your hibernate from a configuration file
+
+//hibernate configuration
+//hibernate annotations
+//mapping a class to db table peforming crud operations
+//onetoone mapping
+//onetomanymapping
+//feching -eager and lazy(default)
+
+//manytomanymapping
+//hibernate lifecycle - different states for an object, transient, persistent, detached, removed 
+//performing composite key mappings
+//persist vs save
+//update vs merge
+//criteria api
+//hql
+//native sql
+//inheritance strategies - Singletable, joined, table perclass
+
+//named queries(Hql and Native sql, calling stored procs)
+//optimistic vs pessimistic locking
+//caching- first level, second level, query cache
+//interceptors or callbacks

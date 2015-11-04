@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+		<!-- Assume javatraining is the database name -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/javatraining</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.show_sql">true</property>
+<!--  		<property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>--><!-- Second level cache disabled -->
+  		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+  		<property name="hibernate.cache.use_second_level_cache">true</property>
+  		<property name="hibernate.cache.use_query_cache">true</property>
+ 		<property name="hibernate.hbm2ddl.auto">update</property>
+ 		<!-- List of hibernate java entities -->
+		<mapping class="org.jnit.entities.Customer" />
+		<mapping class="org.jnit.entities.Order"/>
+		<mapping class="org.jnit.entities.PhoneInformation"/>
+		<mapping class="org.jnit.entities.Reviewer"/>
+		<mapping class="org.jnit.entities.Task"/>
+		<mapping class="org.jnit.entities.Employee"/>
+
+		<mapping class="org.jnit.inheritance.cd.CD"/>
+		<mapping class="org.jnit.inheritance.cd.InternationalCD"/>
+		<mapping class="org.jnit.inheritance.cd.SpecialEditionCD"/>
+
+		<mapping class="org.jnit.inheritance.person.Person"/>
+		<mapping class="org.jnit.inheritance.person.Student"/>
+		<mapping class="org.jnit.inheritance.person.Teacher"/>
+
+		<mapping class="org.jnit.inheritance.vehicle.Vehicle"/>
+		<mapping class="org.jnit.inheritance.vehicle.TwoWheeler"/>
+		<mapping class="org.jnit.inheritance.vehicle.FourWheeler"/>
+		<mapping class="org.jnit.composite.Author"/>
+		
+	</session-factory>
+</hibernate-configuration>
